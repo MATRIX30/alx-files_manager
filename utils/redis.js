@@ -1,18 +1,14 @@
 /**
- * program to handle redis connections
- * contains the class redis
+ * contains redis class to manage redis operations
+ * get, set and del
  */
-
 const redis = require('redis'); // importing redis
 
 class RedisClient {
   constructor() {
-    this.redis_client = redis.createClient({
-      host: 'localhost',
-      port: 6379,
-    }); // creating a redis client
+    this.redis_client = redis.createClient();
     this.redis_client.on('error', (err) => {
-      console.log('Error occured in redis', err);
+      console.log(`Redis Error occured ${err}`);
     });
   }
 
@@ -46,7 +42,7 @@ class RedisClient {
 
   async del(key) {
     return new Promise((resolve, reject) => {
-      this.redis_client.del(key, (err, response) => {
+      this.redis_client.get(key, (err, response) => {
         if (err) {
           reject(err);
         } else {
@@ -58,5 +54,4 @@ class RedisClient {
 }
 
 const redisClient = new RedisClient();
-
 module.exports = redisClient;
