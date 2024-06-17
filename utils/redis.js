@@ -5,7 +5,7 @@
 const redis = require('redis'); // importing redis
 
 class RedisClient {
-  constructor () {
+  constructor() {
     this.redis_client = redis.createClient();
     this.redis_client.on('error', (err) => {
       console.log(`Redis Error occured ${err}`);
