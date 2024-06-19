@@ -9,7 +9,8 @@
 `NodeJS`
 `ExpressJS`
 `Kue`
- 
+
+
  - Weight: 1
  - Project to be done in teams of 2 people (your team: Tekoh Palma ACHU)
  - Project will start Jun 13, 2024 4:00 AM, must end by Jun 20, 2024 4:00 AM
